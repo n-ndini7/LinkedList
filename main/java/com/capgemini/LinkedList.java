@@ -59,4 +59,13 @@ public class LinkedList {
 
 	}
 	// append to the list
+	
+	public void insert(INode myNode,INode newNode) {
+		INode tempNode = myNode.getNext();
+		myNode.setNext(newNode);
+		newNode.setNext(tempNode);
+	}
+	
+	//insert element in the middle of the list
+	
 }
