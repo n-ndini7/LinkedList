@@ -2,7 +2,7 @@ package com.capgemini;
 
 import com.capgemini.INode;
 
-public class Node<K> implements INode<K> {
+public class Node<K extends Comparable<K>> implements INode<K> {
 	private INode next;
 	private K key;
 

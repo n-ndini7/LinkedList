@@ -1,8 +1,9 @@
 package com.capgemini;
 
 import com.capgemini.INode;
+import java.util.Comparator;
 
-public class LinkedList<K> {
+public class LinkedList<K extends Comparable<K>> {
 
 	public INode head;
 	public INode tail;
@@ -136,4 +137,23 @@ public class LinkedList<K> {
 
 	// search and remove element from the list and resize it
 
+	public void addSorted(INode newNode) {
+		INode tempNode;
+
+		if (head == null || (head.getKey()).compareTo(newNode.getKey()) >= 0) {
+			newNode.setNext(head);
+			head = newNode;
+		} else {
+			tempNode = head;
+			while (tempNode.getNext() != null && (tempNode.getNext().getKey()).compareTo(newNode.getKey()) < 0) {
+				tempNode = tempNode.getNext();
+				newNode.setNext(tempNode.getNext());
+				tempNode.setNext(newNode);
+			}
+			size++;
+		}
+
+	}
+
+	// creating a sorted list in ascending order
 }
