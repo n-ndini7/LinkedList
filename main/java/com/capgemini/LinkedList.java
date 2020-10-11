@@ -2,7 +2,7 @@ package com.capgemini;
 
 import com.capgemini.INode;
 
-public class LinkedList {
+public class LinkedList<K> {
 
 	public INode head;
 	public INode tail;
@@ -83,6 +83,20 @@ public class LinkedList {
 		temp = temp.getNext();
 		return temp;
 	}
-	
+
 	// pop the last element of the list
+
+	public INode<K> search(K key) {
+		INode<K> tempNode = head;
+		while (tempNode != null && tempNode.getNext() != null) {
+			if (tempNode.getKey().equals(key)) {
+				System.out.println("Element found!!");
+				return tempNode;
+			} else
+				tempNode = tempNode.getNext();
+		}
+		return null;
+	}
+
+	// search to find a node
 }
