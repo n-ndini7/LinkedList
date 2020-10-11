@@ -56,4 +56,22 @@ public class LinkedListTest {
 				&& linkedlist.tail.equals(thirdNode);
 		assertEquals(true, result);
 	}
+
+	@Test
+	public void testforPop() {
+		System.out.println("This is test method for removing first element of the list.");
+		Node<Integer> firstNode = new Node<>(70);
+		Node<Integer> secondNode = new Node<>(30);
+		Node<Integer> thirdNode = new Node<>(56);
+		LinkedList linkedlist = new LinkedList();
+		linkedlist.add(firstNode);
+		linkedlist.add(secondNode);
+		linkedlist.add(thirdNode);
+		linkedlist.print();
+		linkedlist.pop();
+		linkedlist.print();
+		Node<Integer> pop = (Node<Integer>) linkedlist.pop();
+ 		assertEquals(secondNode,pop);
+	}
+
 }
