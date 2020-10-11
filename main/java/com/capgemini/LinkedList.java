@@ -113,8 +113,26 @@ public class LinkedList<K> {
 		temp.setNext(Node);
 		Node.setNext(temp2);
 		return temp;
+  }
+	// search and insert element in the list
+
+	public INode searchAndRemove(K key) {
+		INode temp = head;
+		while (temp != null && temp.getNext() != null) {
+			if (temp.getNext().getKey().equals(key)) {
+				break;
+			} else
+				temp = temp.getNext();
+		}
+		temp.setNext(temp.getNext().getNext());
+		size--;
+		return temp;
 	}
 
-	// search and insert an element in the list
+	public int Resize() {
+		return size;
+	}
 
+	// search and remove element from the list and resize it
+  
 }
