@@ -107,7 +107,7 @@ public class LinkedListTest {
 	}
 
 	@Test
-	public void given3Numbers_WhenInserting4th_ShouldInsertAtCorrectPosition() {
+	public void testForSearchAndInsert() {
 		System.out.println("This is test method for searching and inserting an element in the list.");
 		Node<Integer> firstNode = new Node<Integer>(56);
 		Node<Integer> secondNode = new Node<Integer>(30);
