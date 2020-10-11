@@ -13,16 +13,16 @@ public class LinkedList<K> {
 		this.tail = null;
 	}
 
-	public void add(INode newNode) {
+	public void add(INode Node) {
 		count++;
 		if (this.tail == null) {
-			this.tail = newNode;
+			this.tail = Node;
 		}
 		if (this.head == null) {
-			this.head = newNode;
+			this.head = Node;
 		} else {
 			INode temp = this.head;
-			this.head = newNode;
+			this.head = Node;
 			this.head.setNext(temp);
 		}
 	}
@@ -58,10 +58,10 @@ public class LinkedList<K> {
 	}
 	// append to the list
 
-	public void insert(INode myNode, INode newNode) {
+	public void insert(INode myNode, INode Node) {
 		INode temp = myNode.getNext();
-		myNode.setNext(newNode);
-		newNode.setNext(temp);
+		myNode.setNext(Node);
+		Node.setNext(temp);
 	}
 
 	// insert element in the middle of the list
@@ -87,16 +87,31 @@ public class LinkedList<K> {
 	// pop the last element of the list
 
 	public INode<K> search(K key) {
-		INode<K> tempNode = head;
-		while (tempNode != null && tempNode.getNext() != null) {
-			if (tempNode.getKey().equals(key)) {
+		INode<K> temp = head;
+		while (temp != null && temp.getNext() != null) {
+			if (temp.getKey().equals(key)) {
 				System.out.println("Element found!!");
-				return tempNode;
+				return temp;
 			} else
-				tempNode = tempNode.getNext();
+				temp = temp.getNext();
 		}
 		return null;
 	}
 
 	// search to find a node
+	
+	public INode searchAndInsert(K key,INode Node) {
+		INode temp = head;
+		while(temp!=null&&temp.getNext()!=null) {
+			if(temp.getKey().equals(key)) {
+				break;
+			}
+			else 
+				temp = temp.getNext();	
+		}
+		INode temp2 = temp.getNext();
+		temp.setNext(Node);
+		Node.setNext(temp2);
+		return temp;
+	}
 }
