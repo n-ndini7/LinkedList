@@ -5,6 +5,7 @@ import org.junit.Test;
 import com.capgemini.LinkedList;
 import com.capgemini.Node;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class LinkedListTest {
 
@@ -22,6 +23,22 @@ public class LinkedListTest {
 		boolean result = linkedlist.head.equals(thirdNode) && linkedlist.head.getNext().equals(secondNode)
 				&& linkedlist.tail.equals(firstNode);
 		assertEquals(true, result);
+	}
+
+	@Test
+	public void testforAppend() {
+		System.out.println("This is test method for appending element to the list end.");
+		Node<Integer> firstNode = new Node<>(56);
+		Node<Integer> secondNode = new Node<>(30);
+		Node<Integer> thirdNode = new Node<>(70);
+		LinkedList linkedlist = new LinkedList();
+		linkedlist.add(firstNode);
+		linkedlist.append(secondNode);
+		linkedlist.append(thirdNode);
+		linkedlist.print();
+		boolean result = linkedlist.head.equals(firstNode) && linkedlist.head.getNext().equals(secondNode)
+				&& linkedlist.tail.equals(thirdNode);
+		assertTrue(result);
 	}
 
 }
