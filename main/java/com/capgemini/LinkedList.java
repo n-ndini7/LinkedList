@@ -2,7 +2,6 @@ package com.capgemini;
 
 import com.capgemini.INode;
 
-//UC2 - add to the linkedlist
 
 public class LinkedList {
 
@@ -67,5 +66,13 @@ public class LinkedList {
 	}
 	
 	//insert element in the middle of the list
+	
+	public INode pop() {
+		INode temp = this.head;
+		this.head = head.getNext();
+		return temp;
+	}
+
+	// pop the first element of the list
 	
 }
