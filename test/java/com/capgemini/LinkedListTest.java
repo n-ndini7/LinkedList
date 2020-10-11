@@ -106,4 +106,20 @@ public class LinkedListTest {
 		assertEquals(secondNode, search);
 	}
 
+	@Test
+	public void given3Numbers_WhenInserting4th_ShouldInsertAtCorrectPosition() {
+		System.out.println("This is test method for searching and inserting an element in the list.");
+		Node<Integer> firstNode = new Node<Integer>(56);
+		Node<Integer> secondNode = new Node<Integer>(30);
+		Node<Integer> thirdNode = new Node<Integer>(70);
+		LinkedList LinkedList = new LinkedList();
+		LinkedList.add(firstNode);
+		LinkedList.append(secondNode);
+		LinkedList.append(thirdNode);
+		LinkedList.print();
+		Node<Integer> fourthNode = new Node<Integer>(80);
+		Node<Integer> searchAndInsert = (Node<Integer>) LinkedList.searchAndInsert(30, fourthNode);
+		LinkedList.print();
+		assertEquals(secondNode, searchAndInsert);
+	}
 }
