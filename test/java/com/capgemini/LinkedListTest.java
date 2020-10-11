@@ -86,10 +86,24 @@ public class LinkedListTest {
 		LinkedList.add(thirdNode);
 		LinkedList.print();
 		LinkedList.popLast();
-		//Node<Integer> popLast = (Node<Integer>) LinkedList.popLast();
+		// Node<Integer> popLast = (Node<Integer>) LinkedList.popLast();
 		LinkedList.print();
-		//assertEquals(thirdNode, popLast);
+		// assertEquals(thirdNode, popLast);
 
+	}
+
+	@Test
+	public void testForSearch() {
+		System.out.println("This is test method for searching an element of the list.");
+		Node<Integer> firstNode = new Node<Integer>(56);
+		Node<Integer> secondNode = new Node<Integer>(30);
+		Node<Integer> thirdNode = new Node<Integer>(70);
+		LinkedList LinkedList = new LinkedList();
+		LinkedList.add(firstNode);
+		LinkedList.append(secondNode);
+		LinkedList.append(thirdNode);
+		Node<Integer> search = (Node<Integer>) LinkedList.search(30);
+		assertEquals(secondNode, search);
 	}
 
 }
