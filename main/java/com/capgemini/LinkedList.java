@@ -7,6 +7,7 @@ public class LinkedList<K> {
 	public INode head;
 	public INode tail;
 	public int count = 0;
+	public int size = 0;
 
 	public LinkedList() {
 		this.head = null;
@@ -99,19 +100,21 @@ public class LinkedList<K> {
 	}
 
 	// search to find a node
-	
-	public INode searchAndInsert(K key,INode Node) {
+
+	public INode searchAndInsert(K key, INode Node) {
 		INode temp = head;
-		while(temp!=null&&temp.getNext()!=null) {
-			if(temp.getKey().equals(key)) {
+		while (temp != null && temp.getNext() != null) {
+			if (temp.getKey().equals(key)) {
 				break;
-			}
-			else 
-				temp = temp.getNext();	
+			} else
+				temp = temp.getNext();
 		}
 		INode temp2 = temp.getNext();
 		temp.setNext(Node);
 		Node.setNext(temp2);
 		return temp;
 	}
+
+	// search and insert an element in the list
+
 }
