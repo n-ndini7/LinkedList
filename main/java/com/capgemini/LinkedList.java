@@ -2,7 +2,6 @@ package com.capgemini;
 
 import com.capgemini.INode;
 
-
 public class LinkedList {
 
 	public INode head;
@@ -32,14 +31,14 @@ public class LinkedList {
 
 	public void print() {
 		StringBuffer myNodes = new StringBuffer("Linked List: \n");
-		INode tempNode = head;
-		while (tempNode.getNext() != null) {
-			myNodes.append(tempNode.getKey());
-			if (!(tempNode.equals(tail)))
+		INode temp = head;
+		while (temp.getNext() != null) {
+			myNodes.append(temp.getKey());
+			if (!(temp.equals(tail)))
 				myNodes.append("->");
-			tempNode = tempNode.getNext();
+			temp = temp.getNext();
 		}
-		myNodes.append(tempNode.getKey());
+		myNodes.append(temp.getKey());
 		System.out.println(myNodes);
 	}
 	// prints the linkedlist
@@ -58,15 +57,15 @@ public class LinkedList {
 
 	}
 	// append to the list
-	
-	public void insert(INode myNode,INode newNode) {
-		INode tempNode = myNode.getNext();
+
+	public void insert(INode myNode, INode newNode) {
+		INode temp = myNode.getNext();
 		myNode.setNext(newNode);
-		newNode.setNext(tempNode);
+		newNode.setNext(temp);
 	}
-	
-	//insert element in the middle of the list
-	
+
+	// insert element in the middle of the list
+
 	public INode pop() {
 		INode temp = this.head;
 		this.head = head.getNext();
@@ -74,5 +73,16 @@ public class LinkedList {
 	}
 
 	// pop the first element of the list
+
+	public INode popLast() {
+		INode temp = head;
+		while (!temp.getNext().equals(tail)) {
+			temp = temp.getNext();
+		}
+		this.tail = temp;
+		temp = temp.getNext();
+		return temp;
+	}
 	
+	// pop the last element of the list
 }

@@ -71,7 +71,25 @@ public class LinkedListTest {
 		linkedlist.pop();
 		linkedlist.print();
 		Node<Integer> pop = (Node<Integer>) linkedlist.pop();
- 		assertEquals(secondNode,pop);
+		assertEquals(secondNode, pop);
+	}
+
+	@Test
+	public void testForPopLast() {
+		System.out.println("This is test method for removing last element of the list.");
+		Node<Integer> firstNode = new Node<Integer>(70);
+		Node<Integer> secondNode = new Node<Integer>(30);
+		Node<Integer> thirdNode = new Node<Integer>(56);
+		LinkedList LinkedList = new LinkedList();
+		LinkedList.add(firstNode);
+		LinkedList.add(secondNode);
+		LinkedList.add(thirdNode);
+		LinkedList.print();
+		LinkedList.popLast();
+		//Node<Integer> popLast = (Node<Integer>) LinkedList.popLast();
+		LinkedList.print();
+		//assertEquals(thirdNode, popLast);
+
 	}
 
 }
