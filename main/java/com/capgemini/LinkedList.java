@@ -113,8 +113,7 @@ public class LinkedList<K> {
 		temp.setNext(Node);
 		Node.setNext(temp2);
 		return temp;
-	}
-
+  }
 	// search and insert element in the list
 
 	public INode searchAndRemove(K key) {
@@ -135,5 +134,5 @@ public class LinkedList<K> {
 	}
 
 	// search and remove element from the list and resize it
-
+  
 }
