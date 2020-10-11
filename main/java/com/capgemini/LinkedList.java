@@ -1,9 +1,48 @@
 package com.capgemini;
 
-//master branch - welcome message
+import com.capgemini.INode;
+
+//UC2 - add to the linkedlist
+
 public class LinkedList {
 
-	public static void main(String[] args) {
-		System.out.println("Welcome to introduction to Data Structures!");
+	public INode head;
+	public INode tail;
+	public int count = 0;
+
+	public LinkedList() {
+		this.head = null;
+		this.tail = null;
 	}
+
+	public void add(INode newNode) {
+		count++;
+		if (this.tail == null) {
+			this.tail = newNode;
+		}
+		if (this.head == null) {
+			this.head = newNode;
+		} else {
+			INode temp = this.head;
+			this.head = newNode;
+			this.head.setNext(temp);
+		}
+	}
+
+	// adds to the linkedlist
+
+	public void print() {
+		StringBuffer myNodes = new StringBuffer("Linked List: \n");
+		INode tempNode = head;
+		while (tempNode.getNext() != null) {
+			myNodes.append(tempNode.getKey());
+			if (!(tempNode.equals(tail)))
+				myNodes.append("->");
+			tempNode = tempNode.getNext();
+		}
+		myNodes.append(tempNode.getKey());
+		System.out.println(myNodes);
+	}
+	// prints the linkedlist
+
 }
