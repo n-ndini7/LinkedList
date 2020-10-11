@@ -114,8 +114,7 @@ public class LinkedList<K extends Comparable<K>> {
 		temp.setNext(Node);
 		Node.setNext(temp2);
 		return temp;
-	}
-
+  }
 	// search and insert element in the list
 
 	public INode searchAndRemove(K key) {
@@ -156,4 +155,5 @@ public class LinkedList<K extends Comparable<K>> {
 	}
 
 	// creating a sorted list in ascending order
+
 }
